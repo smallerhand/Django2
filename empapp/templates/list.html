@@ -1,0 +1,62 @@
+{# yonetim/templates/list.html #}
+{% load render_table from django_tables2 %}
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <title>従業員一覧</title>
+  <meta charset="utf-8">
+  <title>CSS</title>
+  <style>
+    .jb-xx-small { font-size: xx-small; }
+    .jb-x-small { font-size: x-small; }
+    .jb-small { font-size: small; }
+    .jb-medium { font-size: medium; }
+    .jb-large { font-size: large; }
+    .jb-x-large { font-size: x-large; }
+    .jb-xx-large { font-size: xx-large; }
+  </style>
+
+
+</head>
+<body>
+  <p class="jb-x-large"> 従業員一覧 </p>
+  <br />
+
+  <table style="width: 90%; border-collapse: collapse;" border="3" align = "center" >
+    <tr align = "center">
+
+      <td>	<b>	従業員番号	</b>	</td>
+      <td>	<b>	氏名	</b>	</td>
+      <td>	<b>	氏名（ローマ字）	</b>	</td>
+      <td>	<b>	性別	</b>	</td>
+      <td>	<b>	生年月日	</b>	</td>
+      <td>	<b>	年齢	</b>	</td>
+      <td>	<b>	血液型	</b>	</td>
+      <td>	<b>	所属組織	</b>	</td>
+      <td>	<b>	役職	</b>	</td>
+
+    </tr>
+    {% for emp in emplist.all %}
+    <tr>
+
+      <td align = "center">  {% if emp.emp_num < 10 %}
+        0{{ emp.emp_num }}
+        {% else %}
+        {{ emp.emp_num }}
+        {% endif %}
+      </td>
+      <td>	{{emp.emp_name}}	</td>
+      <td>	{{emp.emp_ename}}	</td>
+      <td align = "center">	{{emp.sex}}	</td>
+      <td>	{{emp.birth}}	</td>
+      <td align = "center">	{{emp.age}}	</td>
+      <td align = "center">	{{emp.bloodtype}}	</td>
+      <td>	{{emp.dep}}	</td>
+      <td>	{{emp.job}}	</td>
+
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
