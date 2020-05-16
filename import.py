@@ -1,7 +1,6 @@
 #have to run below in shell.
 #python manage.py shell < import.py
 
-
 import csv
 from empapp.models import employee
 
