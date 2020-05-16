@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <title>従業員詳細{{empdetail.num}}</title>
+  <meta charset="utf-8">
+  <title>CSS</title>
+  <style>
+    .jb-xx-small { font-size: xx-small; }
+    .jb-x-small { font-size: x-small; }
+    .jb-small { font-size: small; }
+    .jb-medium { font-size: medium; }
+    .jb-large { font-size: large; }
+    .jb-x-large { font-size: x-large; }
+    .jb-xx-large { font-size: xx-large; }
+  </style>
+  <style>
+    table, th, td {
+      border: 3px solid black;
+      border-collapse:collapse;
+    }
+  </style>
+  <style type="text/css">
+  <!--
+   .tab { margin-left: 40px; }
+  -->
+  </style>
+</head>
+<body>
+  <br />
+  <br />
+  <div class = "tab">
+    <p class="jb-x-large"> 従業員詳細 </p>
+    <div class = "tab">
+      <table style="width: 360px; " align = "left" >
+
+        <tr height="35">	  <td>	<b>	従業員番号	</b>	</td>	 <td>
+                                                                        {% if empdetail.num < 10 %}
+                                                                          0{{ empdetail.num }}
+                                                                          {% else %}
+                                                                          {{ empdetail.num }}
+                                                                          {% endif %}
+                                                                      </td>	</tr>
+        <tr height="35">	  <td>	<b>	姓(漢字)	</b>	</td>	 <td>	{{empdetail.lname}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	名(漢字)	</b>	</td>	 <td>	{{empdetail.fname}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	姓(ローマ字)	</b>	</td>	 <td>	{{empdetail.elname}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	名(ローマ字)	</b>	</td>   	 <td>	{{empdetail.efname}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	性別	</b>	</td>          	 <td>	{{empdetail.sex}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	メールアドレス	</b>	</td>	 <td>	{{empdetail.email}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	生年月日	</b>	</td>	 <td>	{{empdetail.birth}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	年齢	</b>	</td>	 <td>	{{empdetail.age}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	血液型	</b>	</td>	 <td>	{{empdetail.bloodtype}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	所属組織	</b>	</td>	 <td>	{{empdetail.dep}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	役職	</b>	</td>	 <td>	{{empdetail.job}}	</td>	</tr>
+        <tr height="35">	  <td>	<b>	パスワード	</b>	</td>	 <td>	{{empdetail.pw}}	</td>	</tr>
+
+      </table>
+    </div>
+  </div>
+</body>
+</html>
