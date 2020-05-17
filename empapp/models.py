@@ -1,7 +1,7 @@
 from django.db import models
 
 class employeeDetail(models.Model):
-    num	=	models.PositiveSmallIntegerField()
+    num	=	models.PositiveSmallIntegerField(primary_key=True)
     lname	=	models.CharField(max_length=30)
     fname	=	models.CharField(max_length=30)
     elname	=	models.CharField(max_length=30)
