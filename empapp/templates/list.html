@@ -31,7 +31,7 @@
   <div class = "tab">
     <p class="jb-x-large"> 従業員一覧 </p>
   </div>
-  
+
   <table style="width: 90%;" align = "center" >
     <tr align = "center">
 
@@ -57,12 +57,12 @@
         <td>	<a href="{% url 'detail' emp.num %}">
               {{emp.lname}}{{emp.fname}} </a>	</td>
         <td>	{{emp.elname}}{{emp.efname}}	</td>
-        <td align = "center">	{{emp.sex}}	</td>
+        <td align = "center">	{{emp.get_sex_display}}	</td>
         <td>	{{emp.birth}}	</td>
         <td align = "center">	{{emp.age}}	</td>
         <td align = "center">	{{emp.bloodtype}}	</td>
-        <td>	{{emp.dep}}	</td>
-        <td>	{{emp.job}}	</td>
+        <td>	{{emp.get_dep_display}}	</td>
+        <td>	{{emp.get_job_display}}	</td>
     </tr>
     {% endfor %}
   </table>
